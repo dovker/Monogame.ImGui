@@ -7,10 +7,60 @@ Disclaimer: This code wasn't written by me, I just fixed a few things and upload
 
 # Usage
 
-To use Monogame.ImGui, download this library using NuGet inside your project.
-In your Game1, Initialize ImGuiRenderer
+To use Monogame.ImGui, download this library using NuGet inside your Monogame project.
+In your Game1, Initialize ImGuiRenderer like so:
+
+```
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using MonoGame.ImGui;
 
 
+
+namespace YourGame
+{
+    public class Game1 : Game
+    {
+        public GraphicsDeviceManager graphics;
+        SpriteBatch spriteBatch;
+
+        public ImGUIRenderer GuiRenderer; //This is the ImGuiRenderer
+    }
+    
+    public Game1()
+    {
+        GuiRenderer = new ImGUIRenderer(this).Initialize().RebuildFontAtlas();
+
+        graphics = new GraphicsDeviceManager(this);
+        Content.RootDirectory = "Content";
+
+    }
+...
+```
+
+And then in the Draw event, you need to add `GuiRenderer.BeginLayout(gameTime);` and `GuiRenderer.EndLayout();`
+Like so:
+```
+...
+protected override void Draw(GameTime gameTime)
+{
+    graphics.GraphicsDevice.Clear(Color.Coral);
+
+    spriteBatch.Begin();
+    //Your regular Game draw calls
+    spriteBatch.End();
+
+    base.Draw(gameTime);
+    
+    GuiRenderer.BeginLayout(gameTime);
+
+    //Insert Your ImGui code
+
+    GuiRenderer.EndLayout();
+
+}
+...
+```
 
 # See Also
 
