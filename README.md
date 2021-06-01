@@ -27,13 +27,11 @@ namespace YourGame
         public ImGUIRenderer GuiRenderer; //This is the ImGuiRenderer
     }
     
-    public Game1()
+    protected override void Initialize()
     {
         GuiRenderer = new ImGUIRenderer(this).Initialize().RebuildFontAtlas();
-
-        graphics = new GraphicsDeviceManager(this);
-        Content.RootDirectory = "Content";
-
+        
+        base.Initialize();
     }
 ...
 ```
