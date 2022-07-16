@@ -1,98 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="packages\NuGet.Build.Packaging.0.2.5-dev.8\build\NuGet.Build.Packaging.props" Condition="Exists('packages\NuGet.Build.Packaging.0.2.5-dev.8\build\NuGet.Build.Packaging.props')" />
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
     <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{3A83CBED-E155-46C8-9CD8-F713AFB2B478}</ProjectGuid>
-        <OutputType>Library</OutputType>
-        <RootNamespace>MonoGame.ImGui</RootNamespace>
-        <AssemblyName>MonoGame.ImGui</AssemblyName>
-        <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
-        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-        <Deterministic>true</Deterministic>
-        <NuGetPackageImportStamp>
-        </NuGetPackageImportStamp>
-        <PackOnBuild>true</PackOnBuild>
-        <PackageVersion>1.0</PackageVersion>
-        <NeutralLanguage>en-US</NeutralLanguage>
-        <Summary>A Monogame wrapper for ImGui.NET</Summary>
-        <PackageTags>imgui, monogame, imgui.net</PackageTags>
-        <Title>Monogame.ImGui</Title>
-        <Authors>Dovydas Vaičiukynas, Amir Barak</Authors>
-        <PackageProjectUrl>https://github.com/dovker/Monogame.ImGui</PackageProjectUrl>
-        <Description>This is a Monogame wrapper for the ImGui.NET Library. Monogame.ImGui lets you build graphical interfaces for your Monogame games / in-game tools using a simple immediate-mode style.</Description>
-        <PackageId>Monogame.ImGui</PackageId>
-        <PackageLicenseUrl>https://github.com/dovker/Monogame.ImGui/blob/master/LICENSE</PackageLicenseUrl>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>..\..\..\Target\Debug-AnyCPU\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <PlatformTarget>x86</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>..\..\..\Target\Release-AnyCPU\</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
-    <PropertyGroup>
-        <StartupObject />
-    </PropertyGroup>
+
     <ItemGroup>
-        <None Include="packages.config" />
+      <PackageReference Include="ImGui.NET" Version="1.87.3" />
+      <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
     </ItemGroup>
-    <ItemGroup>
-        <Reference Include="MonoGame.Framework, Version=3.7.1.189, Culture=neutral, processorArchitecture=MSIL">
-            <HintPath>$(SolutionDir)\packages\MonoGame.Framework.DesktopGL.3.7.1.189\lib\net45\MonoGame.Framework.dll</HintPath>
-        </Reference>
-        <Reference Include="System.Numerics" />
-        <Reference Include="System.Buffers">
-            <HintPath>$(SolutionDir)\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
-        </Reference>
-        <Reference Include="mscorlib" />
-        <Reference Include="System.Numerics.Vectors">
-            <HintPath>$(SolutionDir)\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-        </Reference>
-        <Reference Include="System.Runtime.CompilerServices.Unsafe">
-            <HintPath>$(SolutionDir)\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-        </Reference>
-        <Reference Include="ImGui.NET">
-            <HintPath>$(SolutionDir)\packages\ImGui.NET.1.72.0\lib\netstandard2.0\ImGui.NET.dll</HintPath>
-        </Reference>
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="Data\IndexData.cs" />
-        <Compile Include="Data\InputData.cs" />
-        <Compile Include="Data\TextureData.cs" />
-        <Compile Include="Data\VertexData.cs" />
-        <Compile Include="DrawText.cs" />
-        <Compile Include="DrawVertDecleration.cs" />
-        <Compile Include="Exceptions\MissingLoadedTextureKeyException.cs" />
-        <Compile Include="Extensions\DataConvertExtensions.cs" />
-        <Compile Include="ImGUIRenderer.cs" />
-        <Compile Include="Utilities\GenerateRasterizerState.cs" />
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-        <PropertyGroup>
-            <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-        </PropertyGroup>
-        <Error Condition="!Exists('$(SolutionDir)\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets'))" />
-    </Target>
-    <Import Project="$(SolutionDir)\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets" Condition="Exists('$(SolutionDir)\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets')" />
-    <Import Project="$(SolutionDir)\packages\ImGui.NET.1.72.0\build\net40\ImGui.NET.targets" Condition="Exists('$(SolutionDir)\packages\ImGui.NET.1.72.0\build\net40\ImGui.NET.targets')" />
-    <Import Project="packages\NuGet.Build.Packaging.0.2.5-dev.8\build\NuGet.Build.Packaging.targets" Condition="Exists('packages\NuGet.Build.Packaging.0.2.5-dev.8\build\NuGet.Build.Packaging.targets')" />
+
 </Project>

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MonoGame.ImGui.Exceptions
+﻿namespace MonoGame.ImGui.Exceptions
 {
     public class MissingLoadedTextureKeyException
         : InvalidOperationException
