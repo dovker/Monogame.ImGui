@@ -7,16 +7,16 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="ImGui.NET" Version="1.87.3" />
-      <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
+        <PackageReference Include="ImGui.NET" Version="1.87.3" />
+        <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
     </ItemGroup>
 
 </Project>
