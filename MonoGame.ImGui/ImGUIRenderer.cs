@@ -163,7 +163,7 @@ public class ImGuiRenderer {
         var io = ImGuiNET.ImGui.GetIO();
         var displaySize = io.DisplaySize;
 
-        const float offset = 0.5f;
+        const float offset = 0.0f;
         _effect.World = Matrix.Identity;
         _effect.View = Matrix.Identity;
         _effect.Projection = Matrix.CreateOrthographicOffCenter(offset, displaySize.X + offset, displaySize.Y + offset, offset, -1.0f, 1.0f);
