@@ -1,7 +1,0 @@
-/Users/dovydas/Documents/GitHub/Target/Release-AnyCPU/libcimgui.dylib
-/Users/dovydas/Documents/GitHub/Target/Release-AnyCPU/MonoGame.ImGui.dll
-/Users/dovydas/Documents/GitHub/Target/Release-AnyCPU/MonoGame.ImGui.pdb
-/Users/dovydas/Documents/GitHub/Engine/Engine Test/MonoGame.ImGui/obj/Release/MonoGame.ImGui.csproj.CoreCompileInputs.cache
-/Users/dovydas/Documents/GitHub/Engine/Engine Test/MonoGame.ImGui/obj/Release/MonoGame.ImGui.csproj.CopyComplete
-/Users/dovydas/Documents/GitHub/Engine/Engine Test/MonoGame.ImGui/obj/Release/MonoGame.ImGui.dll
-/Users/dovydas/Documents/GitHub/Engine/Engine Test/MonoGame.ImGui/obj/Release/MonoGame.ImGui.pdb

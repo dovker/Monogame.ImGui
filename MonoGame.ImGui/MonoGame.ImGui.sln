@@ -1,7 +1,6 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame.ImGui", "MonoGame.ImGui.csproj", "{3A83CBED-E155-46C8-9CD8-F713AFB2B478}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monogame.ImGui", "Monogame.ImGui.csproj", "{C43A43C8-7FF1-4A17-ABA7-E3CED213EFBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3A83CBED-E155-46C8-9CD8-F713AFB2B478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A83CBED-E155-46C8-9CD8-F713AFB2B478}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A83CBED-E155-46C8-9CD8-F713AFB2B478}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A83CBED-E155-46C8-9CD8-F713AFB2B478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C43A43C8-7FF1-4A17-ABA7-E3CED213EFBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C43A43C8-7FF1-4A17-ABA7-E3CED213EFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C43A43C8-7FF1-4A17-ABA7-E3CED213EFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C43A43C8-7FF1-4A17-ABA7-E3CED213EFBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
