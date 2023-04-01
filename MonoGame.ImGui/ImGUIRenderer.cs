@@ -28,7 +28,7 @@ public class ImGuiRenderer {
 
     public virtual void BeginLayout(GameTime gameTime) {
         ImGuiNET.ImGui.GetIO().DeltaTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
-        _inputData.Update(GraphicsDevice);
+        _inputData.Update(Owner);
 
         ImGuiNET.ImGui.NewFrame();
     }

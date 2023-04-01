@@ -18,7 +18,10 @@ public class InputData {
         KeyMap = new List<int>();
     }
 
-    public void Update(GraphicsDevice device) {
+    public void Update(Game game) {
+        if (!game.IsActive)
+            return;
+        
         var io = ImGuiNET.ImGui.GetIO();
         var mouse = Mouse.GetState();
         var keyboard = Keyboard.GetState();
