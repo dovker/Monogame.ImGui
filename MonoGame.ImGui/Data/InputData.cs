@@ -46,6 +46,27 @@ public class InputData {
         var scrollDelta = mouse.ScrollWheelValue - Scrollwheel;
         io.MouseWheel = scrollDelta > 0 ? 1 : scrollDelta < 0 ? -1 : 0;
         Scrollwheel = mouse.ScrollWheelValue;
+
+        UpdateCursor();
+    }
+    
+    private void UpdateCursor() {
+        MouseCursor mouseCursor = ImGui.GetMouseCursor() switch {
+            ImGuiMouseCursor.None => MouseCursor.Arrow,
+            ImGuiMouseCursor.Arrow => MouseCursor.Arrow,
+            ImGuiMouseCursor.TextInput => MouseCursor.IBeam,
+            ImGuiMouseCursor.ResizeAll => MouseCursor.SizeAll,
+            ImGuiMouseCursor.ResizeNS => MouseCursor.SizeNS,
+            ImGuiMouseCursor.ResizeEW => MouseCursor.SizeWE,
+            ImGuiMouseCursor.ResizeNESW => MouseCursor.SizeNESW,
+            ImGuiMouseCursor.ResizeNWSE => MouseCursor.SizeNWSE,
+            ImGuiMouseCursor.Hand => MouseCursor.Hand,
+            ImGuiMouseCursor.NotAllowed => MouseCursor.No,
+            ImGuiMouseCursor.COUNT => MouseCursor.Wait,
+            _ => throw new ArgumentOutOfRangeException()
+        };
+
+        Mouse.PlatformSetCursor(mouseCursor);
     }
 
     public InputData Initialize(Game game) {
