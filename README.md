@@ -1,3 +1,5 @@
+# DISCONTINUED, FOLLOW THIS ALTERNATIVE [Mezo-hx/Monogame.ImGuiNet](https://github.com/Mezo-hx/Monogame.ImGuiNet)
+
 # Monogame.ImGui
 
 This is a Monogame wrapper for the ImGui.NET Library (https://github.com/mellinoe/ImGui.NET). Monogame.ImGui lets you build graphical interfaces for your Monogame games using a simple immediate-mode style.
